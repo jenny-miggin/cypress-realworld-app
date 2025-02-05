@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@3.3.1
-  codecov: codecov/codecov@1.2.3 #
+  cypress: cypress-io/cypress@3.4.2
+  codecov: codecov/codecov@5.2.0 #
 
 executors:
   with-chrome-and-firefox:
@@ -21,7 +21,7 @@ commands:
           path: coverage
       - run: npx nyc report --reporter=text || true
       - codecov/upload:
-          file: coverage/coverage-final.json
+          files: coverage/coverage-final.json
   persist_ws:
     steps:
       - persist_to_workspace:
