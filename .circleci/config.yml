@@ -19,6 +19,10 @@ commands:
     steps:
       - store_artifacts:
           path: coverage
+      - run:
+          name: Install GPG
+          command: |
+            sudo apt install gnupg2
       - run: npx nyc report --reporter=text || true
       - codecov/upload:
           files: coverage/coverage-final.json
