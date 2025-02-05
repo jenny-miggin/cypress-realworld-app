@@ -19,10 +19,7 @@ commands:
     steps:
       - store_artifacts:
           path: coverage
-      - run:
-          name: Install GPG
-          command: |
-            apt install gnupg2
+
       - run: npx nyc report --reporter=text || true
       - codecov/upload:
           files: coverage/coverage-final.json
@@ -41,8 +38,8 @@ commands:
   setup_linux:
     steps:
       - run:
-          name: Install curl
-          command: apt-get update && apt-get install -y curl
+          name: Install curl & GPG
+          command: apt-get update && apt-get install -y curl gnupg2
   # Setup
   #  1. Install Cypress
   #  2. Validate types
