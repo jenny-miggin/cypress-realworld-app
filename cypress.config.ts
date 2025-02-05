@@ -31,6 +31,7 @@ module.exports = defineConfig({
       url: "http://localhost:3001/__coverage__",
       exclude: "cypress/**/*.*",
     },
+    experimentalMemoryManagement: true,
     defaultPassword: process.env.SEED_DEFAULT_USER_PASSWORD,
     paginationPageSize: process.env.PAGINATION_PAGE_SIZE,
 
