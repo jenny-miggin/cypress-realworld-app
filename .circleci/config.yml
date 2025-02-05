@@ -6,7 +6,7 @@ orbs:
 executors:
   with-chrome-and-firefox:
     docker:
-      - image: "cypress/browsers:node-20.12.0-chrome-123.0.6312.86-1-ff-124.0.2-edge-123.0.2420.65-1"
+      - image: "cypress/browsers:node-22.13.1-chrome-132.0.6834.159-1-ff-134.0.2-edge-132.0.2957.127-1"
     resource_class: large
     environment:
       CYPRESS_coverage: false
@@ -22,7 +22,7 @@ commands:
       - run:
           name: Install GPG
           command: |
-            sudo apt install gnupg2
+            apt install gnupg2
       - run: npx nyc report --reporter=text || true
       - codecov/upload:
           files: coverage/coverage-final.json
