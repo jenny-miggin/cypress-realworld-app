@@ -137,7 +137,7 @@ jobs:
       - setup_project_and_cypress
   cypress_tests_linux:
     executor: with-chrome-and-firefox
-    parallelism: 1
+    parallelism: 5
     parameters:
       browser:
         type: string
