@@ -7,7 +7,7 @@ executors:
   with-chrome-and-firefox:
     docker:
       - image: "cypress/browsers:node-22.13.1-chrome-132.0.6834.159-1-ff-134.0.2-edge-132.0.2957.127-1"
-    resource_class: large
+    resource_class: medium
     environment:
       CYPRESS_coverage: false
 
