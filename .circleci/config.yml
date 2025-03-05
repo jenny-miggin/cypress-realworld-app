@@ -181,54 +181,54 @@ linux-workflow: &linux-workflow
         group: Component
         requires:
           - Setup Linux
-    # # Run API tests against backend server
-    # - cypress_tests_linux:
-    #     name: "Cypress API Tests"
-    #     browser: chrome
-    #     specPattern: "cypress/tests/api/*"
-    #     ciBuildId: ${CIRCLE_SHA1:0:8}
-    #     group: API
-    #     requires:
-    #       - Setup Linux
-    # # Run E2E tests in Chrome
-    # - cypress_tests_linux:
-    #     name: "UI Tests - Chrome"
-    #     browser: chrome
-    #     specPattern: "cypress/tests/ui/*"
-    #     ciBuildId: ${CIRCLE_SHA1:0:8}
-    #     group: "UI - Chrome"
-    #     recordPercy: true
-    #     requires:
-    #       - Setup Linux
-    # # Run E2E tests in Chrome with mobile device viewport
-    # - cypress_tests_linux:
-    #     name: "UI Tests - Chrome - Mobile"
-    #     browser: chrome
-    #     specPattern: "cypress/tests/ui/*"
-    #     ciBuildId: ${CIRCLE_SHA1:0:8}
-    #     group: "UI - Chrome - Mobile"
-    #     isMobile: true
-    #     requires:
-    #       - Setup Linux
-    # # Run E2E tests in Firefox
-    # - cypress_tests_linux:
-    #     name: "UI Tests - Firefox"
-    #     browser: firefox
-    #     specPattern: "cypress/tests/ui/*"
-    #     ciBuildId: ${CIRCLE_SHA1:0:8}
-    #     group: "UI - Firefox"
-    #     requires:
-    #       - Setup Linux
-    # # Run E2E tests in Firefox with mobile device viewport
-    # - cypress_tests_linux:
-    #     name: "UI Tests - Firefox - Mobile"
-    #     browser: firefox
-    #     specPattern: "cypress/tests/ui/*"
-    #     ciBuildId: ${CIRCLE_SHA1:0:8}
-    #     group: "UI - Firefox - Mobile"
-    #     isMobile: true
-    #     requires:
-    #       - Setup Linux
+    # Run API tests against backend server
+    - cypress_tests_linux:
+        name: "Cypress API Tests"
+        browser: chrome
+        specPattern: "cypress/tests/api/*"
+        ciBuildId: ${CIRCLE_SHA1:0:8}
+        group: API
+        requires:
+          - Setup Linux
+    # Run E2E tests in Chrome
+    - cypress_tests_linux:
+        name: "UI Tests - Chrome"
+        browser: chrome
+        specPattern: "cypress/tests/ui/*"
+        ciBuildId: ${CIRCLE_SHA1:0:8}
+        group: "UI - Chrome"
+        recordPercy: true
+        requires:
+          - Setup Linux
+    # Run E2E tests in Chrome with mobile device viewport
+    - cypress_tests_linux:
+        name: "UI Tests - Chrome - Mobile"
+        browser: chrome
+        specPattern: "cypress/tests/ui/*"
+        ciBuildId: ${CIRCLE_SHA1:0:8}
+        group: "UI - Chrome - Mobile"
+        isMobile: true
+        requires:
+          - Setup Linux
+    # Run E2E tests in Firefox
+    - cypress_tests_linux:
+        name: "UI Tests - Firefox"
+        browser: firefox
+        specPattern: "cypress/tests/ui/*"
+        ciBuildId: ${CIRCLE_SHA1:0:8}
+        group: "UI - Firefox"
+        requires:
+          - Setup Linux
+    # Run E2E tests in Firefox with mobile device viewport
+    - cypress_tests_linux:
+        name: "UI Tests - Firefox - Mobile"
+        browser: firefox
+        specPattern: "cypress/tests/ui/*"
+        ciBuildId: ${CIRCLE_SHA1:0:8}
+        group: "UI - Firefox - Mobile"
+        isMobile: true
+        requires:
+          - Setup Linux
 
 workflows:
   linux:
